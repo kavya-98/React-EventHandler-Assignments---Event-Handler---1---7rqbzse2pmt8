@@ -1,17 +1,26 @@
-import React from 'react'
-import '../styles/App.css';
+import React from "react";
+import "../styles/App.css";
 const App = () => {
+  const handleDoubleClick = (event) => {
+    event.preventDefault();
+    console.log("I was double clicked");
+  };
+  const handleSingleClick = (event) => {
+    event.preventDefault();
+    console.log("I was not double clicked");
+  };
 
-  // do not change the code inside the function clickA
-  const clickA = () =>{
-    console.log('Clicked button A')
-  }
   return (
     <div id="main">
-      <button id="button-a">Button A</button>
+      <button
+        onDoubleClick={handleDoubleClick}
+        onClick={handleSingleClick}
+        id="dblclick-btn"
+      >
+        Double click me
+      </button>
     </div>
-  )
-}
-
+  );
+};
 
 export default App;
